@@ -1,6 +1,14 @@
-﻿namespace EmployeeManagementSystem
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace EmployeeManagementSystem
 {
-    public class ApplicationDbContext
+    public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext(DbContextOptions options) : base(options)
+        {
+
+        }
+
+
     }
 }
