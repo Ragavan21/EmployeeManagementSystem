@@ -6,9 +6,6 @@ namespace EmployeeManagementSystem.Model
     {
         public int DepartmentID { get; set; }
 
-        [ForeignKey("Employee")]
-        public int EmployeeId { get; set; }
-
         [ForeignKey("Designation")]
         public int DesignationId { get; set; }
 

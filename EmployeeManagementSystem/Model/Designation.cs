@@ -10,8 +10,6 @@ namespace EmployeeManagementSystem.Model
 
         [ForeignKey("Department")]
         public int DepartmentId { get; set; }
-        
-        public int EmployeeId { get; set; }
         public int Level { get; set; } // Seniority Level
         public int IsActive { get; set; }
 

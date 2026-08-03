@@ -6,7 +6,6 @@ namespace EmployeeManagementSystem.Model
     public class Employee : baseClass
     {
         public int EmployeeId { get; set; }
-        public int EmployeeDetailsId { get; set; }
         public string EmployeeName { get; set; }
         public Gender Gender { get; set; }
         public int DepartmentId { get; set; }
