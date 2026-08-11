@@ -8,12 +8,11 @@ namespace EmployeeManagementSystem.Model
         public string DesignationName { get; set; }
         public string DesignationCode { get; set; }
 
-        [ForeignKey("Department")]
-        public int DepartmentId { get; set; }
         public int Level { get; set; } // Seniority Level
         public int IsActive { get; set; }
+        [ForeignKey("Department")]
+        public int DepartmentId { get; set; }
 
-        public ICollection<Employee> Employee { get; set; }
         public Department Department { get; set; }
 
     }
