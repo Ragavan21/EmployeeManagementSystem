@@ -9,8 +9,8 @@ namespace EmployeeManagementSystem.Model
         public string EmployeeName { get; set; }
         public Gender Gender { get; set; }
 
-        //[ForeignKey("Designation")]
-        //public int DesignationId { get; set; }
+        [ForeignKey("Designation")]
+        public int DesignationId { get; set; }
         public string ContactNo { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -22,8 +22,7 @@ namespace EmployeeManagementSystem.Model
 
         [ForeignKey("Department")]
         public int DepartmentId { get; set; }
-        [ForeignKey("Designation")]
-        public int DesignationId { get; set; }
+
         public EmployeeDetails EmployeeDetails { get; set; }
         public Department Department { get; set; }
         public Designation Designation { get; set; }

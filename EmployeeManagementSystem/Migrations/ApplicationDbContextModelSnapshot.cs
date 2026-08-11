@@ -45,9 +45,6 @@ namespace EmployeeManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DesignationId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -126,7 +123,7 @@ namespace EmployeeManagementSystem.Migrations
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DesignationId")
+                    b.Property<int>("DesignationId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -260,11 +257,15 @@ namespace EmployeeManagementSystem.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EmployeeManagementSystem.Model.Designation", null)
-                        .WithMany("Employee")
-                        .HasForeignKey("DesignationId");
+                    b.HasOne("EmployeeManagementSystem.Model.Designation", "Designation")
+                        .WithMany()
+                        .HasForeignKey("DesignationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Department");
+
+                    b.Navigation("Designation");
                 });
 
             modelBuilder.Entity("EmployeeManagementSystem.Model.EmployeeDetails", b =>
@@ -282,11 +283,6 @@ namespace EmployeeManagementSystem.Migrations
                 {
                     b.Navigation("Designations");
 
-                    b.Navigation("Employee");
-                });
-
-            modelBuilder.Entity("EmployeeManagementSystem.Model.Designation", b =>
-                {
                     b.Navigation("Employee");
                 });
 

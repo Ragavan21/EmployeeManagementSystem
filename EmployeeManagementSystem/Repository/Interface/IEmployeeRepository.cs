@@ -5,5 +5,6 @@ namespace EmployeeManagementSystem.Repository.Interface
     public interface IEmployeeRepository
     {
         public Task<List<GetEmployeeDTO>> GetAllEmployee();
+        public Task<GetEmployeeFullDetailsDTO> GetEmployeeByID(int EmpId);
     }
 }
